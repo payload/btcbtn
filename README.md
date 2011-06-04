@@ -1,4 +1,4 @@
-== btcbtn
+# btcbtn
 
 * a website with a bitcoin button which enables you to donate some bitcoins
   with one click
@@ -18,7 +18,7 @@
       donate 0.1 BTC
     </a>
 
-=== architecture
+## architecture
 
 * python and its batteries
 
