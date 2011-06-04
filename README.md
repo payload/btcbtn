@@ -15,7 +15,7 @@
 * change also the amount if you like
 
     ```html
-    <a href="http://localhost:8170/donate/0.1BTC/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43>
+    <a href="http://localhost:8170/donate/0.1BTC/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43">
       donate 0.1 BTC
     </a>
     ```
