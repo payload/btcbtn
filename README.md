@@ -5,18 +5,20 @@
 * the user has to have the btcbtn server running
 * this button links to a client side local url like:
 
-    http://localhost:8170/donate/0.1BTC/{address}
+    http://localhost:8170/donate/0.1BTC/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43
 
 * a locally running server has access to the wallet and will push these bitcoins
   to the address after some confirmation
 * you don't need to push your bitcoins to a remote wallet in advance!
 * put this link or the code for the button on your website and substitute
-  at least {address} with your bitcoin address, change also the amount if you
-  like
+  at least the bitcoin address with your bitcoin address
+* change also the amount if you like
 
-    <a href="http://localhost:8170/donate/0.1BTC/{address}">
+    ```html
+    <a href="http://localhost:8170/donate/0.1BTC/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43>
       donate 0.1 BTC
     </a>
+    ```
 
 ## architecture
 
