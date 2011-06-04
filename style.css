@@ -1,0 +1,34 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+div {
+    display: inline-block;
+    margin: 0.1em;
+    padding: 0.5em;
+    -khtml-border-radius: 0.3em;
+    -moz-border-radius: 0.3em;
+    -webkit-border-radius: 0.3em;
+    border-radius: 0.3em;
+}
+.sign {
+    font-size: 24pt;
+    background-color: #FFCC55;
+}
+.balance {
+    font-size: 18pt;
+    background-color: #FFCC55;
+}
+.confirm {
+    font-size: 18pt;
+    background-color: #FF6666;
+}
+.answer {
+    font-size: 18pt;
+    background-color: #8888FF;
+}
+.address {
+    font-size: small;
+}
+
