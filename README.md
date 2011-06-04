@@ -1,18 +1,19 @@
 # btcbtn
 
-* a website with a bitcoin button which enables you to donate some bitcoins
-  with one click
-* the user has to have the btcbtn server running
-* this button links to a client side local url like:
+* today bitcoin enabled websites have a line with a bitcoin address so you
+  can copy and paste it to donate some bitcoins
+* btcbtn is a system to switch this copy paste line into a button so you need
+  only (at the time) 2 clicks to donate an amount of bitcoins
+* you don't need to register with a third service where you put your bitcoins
+  into a remote wallet
+* unfortunatly the client side needs this software running in the background
+  and `bitcoin` in the `PATH` when running `btcbtn`
 
-    http://localhost:8170/donate/0.1BTC/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43
+## the button
 
-* a locally running server has access to the wallet and will push these bitcoins
-  to the address after some confirmation
-* you don't need to push your bitcoins to a remote wallet in advance!
 * put this link or the code for the button on your website and substitute
   at least the bitcoin address with your bitcoin address
-* change also the amount if you like
+* change also the amount if you like in both places
 
     ```html
     <a href="http://localhost:8170/donate/0.1BTC/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43">
@@ -22,15 +23,20 @@
 
 ## architecture
 
-* python and its batteries
+* it uses python and its batteries
 
-* listen on localhost:8170
-* show confirmation site on HTTP GET /donate/(\d+(.\d+)?)BTC/[0-9a-zA-Z]+
+* listen on `localhost:8170`
+* show confirmation site on `HTTP GET /donate/(\d+(.\d+)?)BTC/[0-9a-zA-Z]+`
+  which has a link to the confirmation
 * donate on confirmation
-* to donate, call bitcoin sendtoaddress SOME-BITCOIN-ADDRESS AMOUNT
+* to donate, call `bitcoin sendtoaddress ADDRESS AMOUNT`
 
-* the confirmation site must contain localhost specific information which are
-  secret to the outside world so click fraud can be detected
-* you can see it in the url, but some browsers dont show it
-* if this is not possible, pop up a windows independant of the browser
+## future plans
+
+* fraud prevention for browsers which don't show the url line
+* a styled button
+* integration with `bitcoin`
+* client side change of the amount
+* donate with latency so you can revoke a donation and dont need a confirmation
+  ultimately resulting in 1-click bitcoin transfer
 
