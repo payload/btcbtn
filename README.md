@@ -28,6 +28,25 @@
     </a>
     ```
 
+* the same a little bit styled
+    ```html
+    <div class="btcbtn"
+        style="
+            display: inline-block;
+            margin: 0.1em;
+            padding: 0.5em;
+            -khtml-border-radius: 0.3em;
+            -moz-border-radius: 0.3em;
+            -webkit-border-radius: 0.3em;
+            border-radius: 0.3em;
+            background-color: #CCFF55;
+        ">
+        <a href="http://localhost:8170/donate/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43?amount=0.1">
+            donate 0.1 BTC
+        </a>
+    </div<
+    ```
+
 ## architecture
 
 * it uses python and its batteries
