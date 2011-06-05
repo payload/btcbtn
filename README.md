@@ -10,9 +10,9 @@
   and `bitcoin` in the `PATH` when running `btcbtn` or provide the path to
   your bitcoin executable as an argument
 
-  ```sh
-  btcbtn [--bitcoin=<PATH TO BITCOIN>] [--daemon]
-  ```
+    ```sh
+    btcbtn [--bitcoin=<PATH TO BITCOIN>] [--daemon]
+    ```
 
 * quit btcbtn with `killall btcbtn` when you called it as a daemon :P
 
@@ -29,6 +29,7 @@
     ```
 
 * the same a little bit styled
+
     ```html
     <div class="btcbtn"
         style="
@@ -44,7 +45,7 @@
         <a href="http://localhost:8170/donate/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43?amount=0.1">
             donate 0.1 BTC
         </a>
-    </div<
+    </div>
     ```
 
 ## architecture
