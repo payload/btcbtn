@@ -19,8 +19,8 @@ class BtcBtn:
         self.HTTPServer = HTTPServer
         self.RequestHandler = RequestHandler
         self.routes = [
-            ("/donate/(\d+(.\d+)?)BTC/([0-9a-zA-Z]+)", self.http_donate),
-            ("/confirm/(.+)", self.http_confirm),
+            ("/donate/([0-9a-zA-Z]+)\?amount=(\d+(.\d+)?)", self.http_donate),
+            ("/confirm/(.+)\?amount=(\d+(.\d+)?)", self.http_confirm),
             (".*", self.not_found)
         ]
         self.views = {
@@ -31,17 +31,21 @@ class BtcBtn:
         self.to_confirm = {}
         self.model = { 'style': self.style }
 
-    def http_confirm(self, req, code):
+    def http_confirm(self, req, code, amount, _):
+        if req.client_address[0] != '127.0.0.1':
+            return self.access_denied(req)
         if code not in self.to_confirm:
             return self.not_found(req)
-        model = self.to_confirm[code]
+        model = self.to_confirm.pop(code)
+        model['amount'] = str(float(amount))
         model['answer'] = self.btc_donate(**model)
         self.ok(req, self.render('confirm', model))
 
-    def http_donate(self, req, amount, _, address):
+    def http_donate(self, req, address, amount, _):
         if req.client_address[0] != '127.0.0.1':
             return self.access_denied(req)
         token = self.new_token()
+        print(amount)
         model = {
             'amount': str(float(amount)),
             'address': address,

@@ -16,6 +16,20 @@ div {
     font-size: 24pt;
     background-color: #FFCC55;
 }
+.amount {
+    display: inline-block;
+}
+.amount input {
+    border: none;
+    background: transparent;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: right;
+    font-family: monospace;
+}
+.referer {
+    font-size: small;
+}
 .balance {
     font-size: 18pt;
     background-color: #FFCC55;

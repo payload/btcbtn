@@ -8,17 +8,18 @@
 </head>
 <body>
 <h1>Do you want to donate these bitcoins?</h1>
+<form class='amount' action='/confirm/{token}' method='GET'>
 <div class='sign'>
-    {amount} BTC <br>
-    {referer} <br>
+    <input name="amount" size=7 value="{amount}" autocomplete=off>
+    <label>BTC</label> <br>
+    <a class='referer' href="{referer}">{referer}</a> <br>
     <span class='address'>{address}</span>
 </div><br>
 <div class='balance'>
     Your balance is {balance} BTC.
 </div><br>
 <div class='confirm'>
-    <a href="http://localhost:8170/confirm/{token}">
-        click to confirm
-    </a>
+    <input type="submit" value="click to confirm">
 </div>
+</form>
 
