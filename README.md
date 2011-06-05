@@ -1,4 +1,4 @@
-# btcbtn - [donate 0.05 BTC to me](http://localhost:8170/donate/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43?amount=0.05)
+# btcbtn - [donate 0.05 BTC to me 12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43](http://localhost:8170/donate/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43?amount=0.05)
 
 * today bitcoin enabled websites have a line with a bitcoin address so you
   can copy and paste it to donate some bitcoins
@@ -24,7 +24,8 @@
 
     ```html
     <a href="http://localhost:8170/donate/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43?amount=0.1">
-      donate 0.1 BTC
+      donate 0.1 BTC <br>
+      12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43
     </a>
     ```
 
@@ -43,7 +44,8 @@
             background-color: #CCFF55;
         ">
         <a href="http://localhost:8170/donate/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43?amount=0.1">
-            donate 0.1 BTC
+            donate 0.1 BTC <br>
+            12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43
         </a>
     </div>
     ```
