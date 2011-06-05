@@ -26,7 +26,6 @@ class BtcBtn:
 
         self.bitcoin_path = options.bitcoin
         self.daemon = options.daemon
-        self.style = open("style.css").read()
         self.HTTPServer = HTTPServer
         self.RequestHandler = RequestHandler
         self.routes = [
@@ -40,7 +39,10 @@ class BtcBtn:
         }
         self.views = dict((k, open(v).read()) for k, v in self.views.items())
         self.to_confirm = {}
-        self.model = { 'style': self.style }
+        self.model = {
+            'style': open("style.css").read(),
+            'devbtn': open("btn.html").read()
+        }
 
         if self.daemon:
             daemonize()
@@ -59,7 +61,6 @@ class BtcBtn:
         if req.client_address[0] != '127.0.0.1':
             return self.access_denied(req)
         token = self.new_token()
-        print(amount)
         model = {
             'amount': str(float(amount)),
             'address': address,

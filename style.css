@@ -4,7 +4,6 @@ body {
     font-weight: bold;
 }
 div {
-    display: inline-block;
     margin: 0.1em;
     padding: 0.5em;
     -khtml-border-radius: 0.3em;
@@ -16,15 +15,14 @@ div {
     font-size: 24pt;
     background-color: #FFCC55;
 }
-.amount {
+.page {
     display: inline-block;
 }
-.amount input {
+.input {
     border: none;
     background: transparent;
-    font-size: 1em;
     font-weight: bold;
-    text-align: right;
+    text-align: center;
     font-family: monospace;
 }
 .referer {
@@ -37,6 +35,9 @@ div {
 .confirm {
     font-size: 18pt;
     background-color: #FF6666;
+}
+input {
+    font-size: 1em;
 }
 .answer {
     font-size: 18pt;

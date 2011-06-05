@@ -8,12 +8,15 @@
 </head>
 <body>
 <h1>Donation confirmed!</h1>
-<div class='sign'>
-    {amount} BTC <br>
-    <a class="referer" href="{referer}">{referer}</a> <br>
-    <span class='address'>{address}</span>
-</div><br>
-<div class='answer'>
-    {answer}.
+<div class="page">
+    <div class='sign'>
+        <input class="input" name="amount" size=7 value="{amount}" autocomplete=off><br>
+        <a class="referer" href="{referer}">{referer}</a> <br>
+        <span class='address'>{address}</span>
+    </div>
+    <div class='answer'>
+        {answer}.
+    </div>
+    {devbtn}
 </div>
 
