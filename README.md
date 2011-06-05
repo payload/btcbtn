@@ -63,9 +63,8 @@
 ## future plans
 
 * fraud prevention for browsers which don't show the url line
-* a styled button
+* a better styled button
 * integration with `bitcoin`
-* client side change of the amount
 * donate with latency so you can revoke a donation and dont need a confirmation
   ultimately resulting in 1-click bitcoin transfer
 
