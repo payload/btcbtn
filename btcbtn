@@ -4,6 +4,9 @@ from http.server import HTTPServer, BaseHTTPRequestHandler
 from random import random
 import subprocess
 import json
+import os
+import optparse
+import sys
 
 class BtcBtn:
     def __init__(self):
@@ -14,7 +17,15 @@ class BtcBtn:
                     if m and method(req, *m.groups()) == None:
                         break
 
-        self.bitcoin_path = 'bitcoin'
+        parser = optparse.OptionParser()
+        parser.add_option(
+            '--bitcoin', dest='bitcoin', action='store', default='bitcoin')
+        parser.add_option(
+            '--daemon', dest='daemon', action='store_true', default=False)
+        (options, args) = parser.parse_args()
+
+        self.bitcoin_path = options.bitcoin
+        self.daemon = options.daemon
         self.style = open("style.css").read()
         self.HTTPServer = HTTPServer
         self.RequestHandler = RequestHandler
@@ -30,6 +41,9 @@ class BtcBtn:
         self.views = dict((k, open(v).read()) for k, v in self.views.items())
         self.to_confirm = {}
         self.model = { 'style': self.style }
+
+        if self.daemon:
+            daemonize()
 
     def http_confirm(self, req, code, amount, _):
         if req.client_address[0] != '127.0.0.1':
@@ -99,6 +113,30 @@ class BtcBtn:
         server_address = ('127.0.0.1', 8170)
         httpd = HTTPServer(server_address, self.RequestHandler)
         httpd.serve_forever()
+
+def daemonize():
+    # copy pasted from
+    #   http://code.activestate.com/recipes/66012-fork-a-daemon-process-on-unix/
+    # thanks at Jürgen Hermann
+    try:
+        pid = os.fork()
+        if pid > 0:
+            sys.exit(0)
+    except OSError:
+        sys.exit(1)
+
+    # decouple from parent environment
+    os.chdir("/")
+    os.setsid()
+    os.umask(0)
+
+    try:
+        pid = os.fork()
+        if pid > 0:
+            print("daemon PID {0}".format(pid))
+            sys.exit(0)
+    except OSError:
+        sys.exit(1)
 
 def main():
     try:

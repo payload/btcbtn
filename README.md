@@ -7,7 +7,14 @@
 * you don't need to register with a third service where you put your bitcoins
   into a remote wallet
 * unfortunatly the client side needs this software running in the background
-  and `bitcoin` in the `PATH` when running `btcbtn`
+  and `bitcoin` in the `PATH` when running `btcbtn` or provide the path to
+  your bitcoin executable as an argument
+
+  ```sh
+  btcbtn [--bitcoin=<PATH TO BITCOIN>] [--daemon]
+  ```
+
+* quit btcbtn with `killall btcbtn` when you called it as a daemon :P
 
 ## the button
 
@@ -16,7 +23,7 @@
 * change also the amount if you like in both places
 
     ```html
-    <a href="http://localhost:8170/donate/0.1BTC/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43">
+    <a href="http://localhost:8170/donate/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43?amount=0.1">
       donate 0.1 BTC
     </a>
     ```
@@ -26,7 +33,7 @@
 * it uses python and its batteries
 
 * listen on `localhost:8170`
-* show confirmation site on `HTTP GET /donate/(\d+(.\d+)?)BTC/[0-9a-zA-Z]+`
+* show confirmation site on `HTTP GET /donate/[0-9a-zA-Z]+?amount=(\d+(.\d+)?)`
   which has a link to the confirmation
 * donate on confirmation
 * to donate, call `bitcoin sendtoaddress ADDRESS AMOUNT`
