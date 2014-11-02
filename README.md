@@ -1,4 +1,6 @@
-# btcbtn - [donate 0.05 BTC to me 12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43](http://localhost:8170/donate/12UjAGVyKwmH3dN7TmEvxGLf3iomNX8G43?amount=0.05)
+# deprecated!
+
+# btcbtn
 
 * today bitcoin enabled websites have a line with a bitcoin address so you
   can copy and paste it to donate some bitcoins
